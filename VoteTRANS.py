@@ -22,7 +22,7 @@ def create_arguments():
     Args:        
     Returns:      
         args (argparse.ArgumentParser):
-            all aguments for TRUST
+            all aguments for VoteTRANS
 
     """
     parser = argparse.ArgumentParser(description='TRUST')
@@ -54,11 +54,36 @@ def create_arguments():
     return args
 
 def print_and_log(text):
+    """ print to console and log to text file at "dataset/target/attack/log.txt"    
+    Args:        
+        text (string):
+            text to process
+    """  
     print(text)
     with open(f"{args.dataset}/{args.target}/{args.attack}/log.txt", "a+") as f:
         f.write(text + "\n")
 
 def evaluate(org_texts, adv_texts, target, supports, auxidiary_attack, word_ratio = 1.0):    
+    """ evaluate VoteTRANS for balanced texts of original and adversarial texts
+    Args:        
+        org_texts (list of string):
+            list of original texts
+        adv_texts (list of string):
+            list of adversarial texts
+        target:
+            an target model loaded by TextAttack
+        supports:
+            support models loaded by TextAttack
+        auxidiary_attack:
+            an attack from TextAttack.
+        word_ratio (float, default = 1.0):
+            a threshold to determine the number of words in the input text are used to process        
+    Returns:      
+        f1 (float):
+            F1-score
+        recall (float):
+            Adverarial recall
+    """  
     gold_labels = []
     detect_labels = []
     num_pairs = len(org_texts)
