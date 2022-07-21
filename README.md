@@ -2,7 +2,7 @@
 
 ## Dependencies
 
-* TextAttack framework (https://github.com/QData/TextAttack) (install by : `pip install textattack` for basic packages (such as PyTorch and Transformers) or `pip install textattack [optional]` for optional dependences. Please refer TextAttack installation ([https://github.com/QData/TextAttack](https://textattack.readthedocs.io/en/latest/0_get_started/installation.html)) for more detail.
+* TextAttack framework (https://github.com/QData/TextAttack) (install by : `pip install textattack` for basic packages (such as PyTorch and Transformers) or `pip install textattack [tensorflow,optional]` for tensorflow and optional dependences. Please refer TextAttack installation (https://textattack.readthedocs.io/en/latest/0_get_started/installation.html) for more detail.
 
 ## Usage
 
